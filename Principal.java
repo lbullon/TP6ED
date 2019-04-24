@@ -22,15 +22,16 @@ public class Principal extends Application
         // Create the Text
         Label textNombre = new Label("Introduce tu nombre:");
         TextField nombre = new TextField();
-        Label textApellido = new Label("Introduce tu nombre:");
-        TextField apellido = new TextField();
+        Label textEdad = new Label("Introduce tu nombre:");
+        TextField edad = new TextField();
         Button b1 = new Button("_Crear");
 
         
-        VBox root = new VBox(textNombre,nombre,textApellido,apellido,b1);
+        VBox root = new VBox(textNombre,nombre,textEdad,edad,b1);
         b1.setOnAction(e -> {
-			Person p = new Person(nombre,apellido);
-		
+      Person p = new Person();
+      p.setName(nombre.getText());
+      p.setAge(Integer.parseInt(edad.getText()));
 		});
         Scene scene = new Scene(root);
          
